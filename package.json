@@ -6,13 +6,15 @@
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^8.5.0",
+    "cssnano": "^3.10.0",
     "node-sass": "^4.9.0",
     "postcss-cli": "^5.0.0"
   },
   "scripts": {
     "sass": "node-sass source/css/style.scss source/css/style.css",
     "concat-css": "cat source/css/*.css > build/css/all.css",
-    "autoprefix": "post.css input/*.css --use autoprefixer -d output/css/"
+    "autoprefix": "postcss build/css/all.css --use autoprefixer -d build/css/",
+    "minifycss": "postcss build/css/all.css --use cssnano -d build/css/"
   },
   "repository": {
     "type": "git",
